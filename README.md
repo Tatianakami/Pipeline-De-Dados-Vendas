@@ -1,56 +1,94 @@
-Gerador e Analisador de Vendas
-📊 Sobre o Projeto
-O seu projeto é um Gerador e Analisador de Vendas. A função dele é simular o trabalho de um analista de dados que precisa pegar dados brutos, processá-los e transformá-los em informações úteis para o negócio.
+Gerador e Analisador de Vendas 📊
+Sobre o Projeto
+
+Este projeto é um Gerador e Analisador de Vendas, que simula o trabalho de um analista de dados: pegar dados brutos, processá-los e transformá-los em informações úteis para o negócio.
+![Gráfico de Vendas](assets/telagr.jpg)
 
 Ele funciona em três etapas principais:
 
-Extração de Dados: Em um projeto real, você extrairia dados de um banco de dados ou API. No seu projeto, isso é simulado com o uso do SQLite para criar uma tabela de vendas com dados de exemplo.
+Extração de Dados
+Utiliza SQLite para criar uma tabela de vendas com dados de exemplo, simulando a extração de dados de um banco real.
 
-Processamento e Análise: Você usa o Pandas, uma das bibliotecas mais poderosas do Python, para ler os dados do banco de dados e calcular uma métrica importante: o total de vendas diárias.
+Processamento e Análise
+Com Pandas, o projeto lê os dados do banco de dados e calcula métricas importantes, como o total de vendas diárias.
 
-Visualização e Comunicação: Esta é a etapa de entrega. O projeto não só salva os dados processados em um arquivo CSV (que é útil para planilhas), mas também usa o Matplotlib para criar um gráfico de barras em formato de imagem (.png), o que torna a informação muito mais fácil de ser entendida.
+Visualização e Comunicação
+O projeto gera:
 
-![Gráfico de Vendas](/assets/grafico.jpg)
-Extração e Processamento de Dados: Utilizando o SQLite para simular um banco de dados e o pandas para manipular as informações.
+Um relatório em CSV (relatorio_vendas.csv)
 
-Análise e Visualização: Gerando um relatório em formato CSV e uma visualização de dados em formato de gráfico, usando a biblioteca matplotlib.
+Um gráfico de barras em PNG (grafico_vendas.png) usando Matplotlib, facilitando a interpretação dos dados.
 
-![Gráfico de Vendas](/assets/relatorio.jpg)
+![Gráfico de Vendas](assets/gf.jpg)
+
+
+📂 Estrutura do Projeto
+Pipeline-De-Dados-Vendas/
+│
+├─ assets/                # Imagens e recursos
+├─ templates/             # HTML do Flask (se usar versão web)
+│   └─ index.html
+├─ app.py                 # Servidor Flask
+├─ gerador_relatorio.py   # Script principal
+├─ relatorio_vendas.csv   # Arquivo CSV gerado
+├─ grafico_vendas.png     # Gráfico gerado
+├─ vendas.db              # Banco SQLite
+├─ requirements.txt       # Dependências Python
+└─ README.md
 
 🛠️ Tecnologias Utilizadas
-Python: A linguagem de programação principal.
 
-Pandas: Para a manipulação e análise de dados.
+Python: Linguagem principal do projeto
 
-Matplotlib: Para a criação e exportação do gráfico.
+Pandas: Manipulação e análise de dados
 
-SQLite3: Módulo embutido do Python para o banco de dados.
+Matplotlib: Criação e exportação de gráficos
+
+SQLite3: Banco de dados local para simular dados reais
+
+Flask (opcional): Para rodar o projeto como web app
+
+📊 Demonstração
+
+Gráfico de Vendas Diárias
+
+
+Relatório CSV
+
 
 🚀 Como Rodar o Projeto
-Siga os passos abaixo para executar a aplicação em sua máquina.
-
 1. Pré-requisitos
-Certifique-se de que você tem o Python instalado e que criou um ambiente virtual.
+
+Python instalado
+
+Ambiente virtual criado (opcional, mas recomendado)
 
 2. Instalação das Bibliotecas
-Com seu ambiente virtual ativado, instale as bibliotecas necessárias com o seguinte comando:
 
-pip install pandas matplotlib
+Ative seu ambiente virtual e instale as dependências:
 
-3. Execução
-Execute o script no terminal:
+pip install -r requirements.txt
 
+
+Se não tiver requirements.txt, instale manualmente:
+
+pip install pandas matplotlib flask
+
+3. Executando localmente
+Opção 1: Apenas o script
 python gerador_relatorio.py
 
-Após a execução, dois novos arquivos serão criados na sua pasta:
 
-relatorio_vendas.csv (o relatório em tabela)
+Após rodar, serão criados:
+
+relatorio_vendas.csv
+
+grafico_vendas.png
+
+Opção 2: Web App com Flask
+python app.py
 
 
+Abra no navegador:
 
-📝 Próximos Passos
-Este projeto pode ser expandido para incluir outras funcionalidades e se tornar ainda mais robusto. Algumas ideias incluem:
-
-Automação de E-mail: Adicionar a funcionalidade de enviar o relatório e o gráfico automaticamente por e-mail.
-
-Web Scraping: Modificar o script para coletar os dados de uma fonte real, como um site, em vez de um banco de dados local.
+http://127.0.0.1:5000/
